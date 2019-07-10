@@ -14,7 +14,7 @@ before_script:
 script:
 - ng lint
 - ng test --watch=false --browsers=ChromeHeadless
-- ng build --prod --base-href https://client.cfapps.io
+- ng build --prod --base-href https://banking-client.cfapps.io
 
 deploy:
    provider: cloudfoundry
