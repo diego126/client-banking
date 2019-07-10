@@ -14,9 +14,22 @@
         </div>
       </form>
       <br>
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let history of histories">From:{{history.accountOrigin.number}} - To: {{history.accountDestination.number}} - Mount: {{history.mount}}</li>
-      </ul>
+      <table class="table table-sm">
+        <thead>
+          <th>Origin Account</th>
+          <th>Destination Account</th>
+          <th>Amount</th>
+          <th>Transaction date</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let history of histories">
+            <td>{{history.accountOrigin}}</td>
+            <td>{{history.accountDestination}}</td>
+            <td>{{history.mount}}</td>
+            <td>{{history.dateTransfer | date: "medium"}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 <br>

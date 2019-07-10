@@ -26,6 +26,7 @@ export class GetBankTransferComponent implements OnInit {
     this.accountNumber = this.getHistoryForm.controls.accountNumber.value;
     this.bankTransfer.getBankTransfer(this.accountNumber).subscribe(res => {
       this.histories = res.data;
+      console.log(res.data);
     });
   }
 }
