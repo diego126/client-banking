@@ -1,0 +1,6 @@
+---
+applications:
+- name: banking-client
+  buildpacks:
+    - staticfile_buildpack
+  path: dist/client
