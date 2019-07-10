@@ -20,7 +20,8 @@ script:
 deploy:
    provider: cloudfoundry
    username: diego126.tn@gmail.com
-   password: $PIVOTAL
+   password: 
+    secure: BguwDv+vaa1mCeWCMLj6T0dTC9mQJovOFDPERvsjcPh5ZV1m59CRUfrDLVkXDbR3NRNqbFlAuzCKPbdAPRvxX4dps/PKYif10JgXUOmHw1wdThouqH4ZxZnfL3IAHhSg4POFcMy24VQ48Unf+aObPBP5LI2HZkqkGGCg9kAQH58vUWiSH/VbMzvBivp2wetW6yXzOtJr8fcgnWVhsZKhKT1n2DnPDSO1vMY/JRAv7x4tQIfVxzioqPmO6vhAbxhEJn9TjyMLpLk3GmJSKwLlhd9km3J/IGoR84kdA1UCpGFWj4zYEuXA5u95UDXuammOl6WuelQNrHiK5FvuKWhHoJh517b5RNdAVCJB5WIivMcV49YR8O/7847zobMRuCX6V2j9if9Ux5Bow/cwGZSL2ODkPjhXfjbF90zN1+ALv4up/cRqPkIRVkVK7yabZGe/o0FO70vVxiBLjKH7vA0XwVN59RlN+u7lw4LKgghgUHzPCGS8o0rEeRpzcVHOKLCp2M7+XrGaVlJsjBnagGTXOpM6uO30hNWRGHUMOWM7jL0UN9SM4ljC/gMrPXNna7Zcu7OXK2s3RRCIJoGFGa8v4xNcTg1RZMrsuvX4xWFOVqVvpxGY6nZx69b/JSmQzCqkKKTggwBUW1K1cqwDZozIvA75nSfIWwj7eMQNcG0CR9w=
    api: https://api.run.pivotal.io
    organization: maestria-fisi
    space: development
