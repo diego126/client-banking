@@ -1,0 +1,12 @@
+<br>
+<form (ngSubmit)="getHistory()" [formGroup]="getHistoryForm">
+  <label for="accountNumber"></label>
+  <input type="text" id="accountNumber" class="form-control" formControlName="accountNumber">
+  <button type="submit" class="btn btn-dark">Get History</button>
+</form>
+<br>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let history of histories">From:{{history.accountOrigin.number}} - To: {{history.accountDestination.number}} - Mount: {{history.mount}}</li>
+</ul>
+<br>
+<app-perform-bank-transfer></app-perform-bank-transfer>

@@ -1,0 +1,12 @@
+<br>
+<form (ngSubmit)="get()" [formGroup]="getAccountsForm">
+  <label for="customerId">Customer Id</label>
+  <input type="number" id="customerId" class="form-control" formControlName="customerId">
+  <button type="submit" class="btn btn-dark">Get customers</button>
+</form>
+<br>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let bankAccount of bankAccounts">Number:{{bankAccount.number}} -
+    Balance: {{bankAccount.balance}} - isLocked: {{bankAccount.isLocked}}</li>
+</ul>
+<br>

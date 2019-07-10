@@ -1,0 +1,25 @@
+<h1>List of Customers</h1>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Is Active</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers | paginate: { id: 'listing_pagination',
+                                                      itemsPerPage: 10,
+                                                      currentPage: page,
+                                                      totalItems: totalRec }">
+      <td>{{customer.firstName}} </td>
+      <td>{{customer.lastName}}</td>
+      <td>{{customer.isActive}}</td>
+      <td><button class="btn btn-info" (click)="goToAccounts(customer)">Accounts</button></td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+</div>

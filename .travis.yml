@@ -1,0 +1,26 @@
+
+language: node_js
+node_js:
+  - "9"
+dist: trusty
+sudo: required
+
+branches:
+  only:
+  - master
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+- ng lint
+- ng test --watch=false --browsers=ChromeHeadless
+- ng build --prod --base-href https://client-banking.cfapps.io
+
+deploy:
+   provider: cloudfoundry
+   username: diego126.tn@gmail.com
+   password: $PIVOTAL
+   api: https://api.run.pivotal.io
+   organization: maestria-fisi
+   space: development

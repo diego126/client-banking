@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">Perform transfer</div>
+  <div class="card-body">
+    <form (ngSubmit)="performTransfer()" [formGroup]="bankTransferForm">
+      <label for="fromAccountNumber">Origin account number <small>123-456-001</small></label>
+      <input type="text" id="fromAccountNumber" class="form-control" formControlName="fromAccountNumber">
+      <label for="toAccountNumber">Destination account number <small>123-456-002</small></label>
+      <input type="text" id="toAccountNumber" class="form-control" formControlName="toAccountNumber">
+      <label for="amount">Amount</label>
+      <input type="text" id="amount" class="form-control" formControlName="amount">
+      <br>
+      <button type="submit" class="btn btn-primary">Perform</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<br>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Number</th>
+    <th>Balance</th>
+    <th>Is locked</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bankAccount of bankAccounts | paginate: { id: 'listing_pagination',
+                                                      itemsPerPage: 10,
+                                                      currentPage: page,
+                                                      totalItems: totalRec }">
+      <td>{{bankAccount.number}}</td>
+      <td>{{bankAccount.balance}}</td>
+      <td>{{bankAccount.isLocked}}</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+</div>
+<br>
+
+<div class="card">
+  <div class="card-header">Create Account</div>
+  <div class="card-body">
+    <form (ngSubmit)="create()" [formGroup]="createAccountForm">
+      <label for="number">Account number</label>
+      <input type="text" id="number" class="form-control" formControlName="number">
+      <label for="balance">Account balance</label>
+      <input type="text" id="balance" class="form-control" formControlName="balance">
+      <br>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+</div>

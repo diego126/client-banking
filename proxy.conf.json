@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://banking-api-ads.cfapps.io",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
