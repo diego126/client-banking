@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     component: WelcomeComponent,
-    loadChildren: './modules/welcome/welcome.module#WelcomeModule'
+    loadChildren: './modules/authentication/authentication.module#AuthenticationModule'
   },
   {
     path: 'auth',

@@ -1,0 +1,11 @@
+.title{
+    text-align:center;
+}
+.login-box{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.box{
+    margin-top: -50px;
+}
