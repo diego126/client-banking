@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../../core/models/users/User';
 import {UsersService} from '../../../core/services/users.service';
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   user: User;
 
-  constructor(private fb: FormBuilder, private userService: UsersService, private router: Router) {
+  constructor(private fb: FormBuilder, private userService: UsersService, private router: Router, private zone: NgZone) {
   }
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.user = new User(this.loginForm.value);
     this.userService.login(this.user).subscribe(
       res => {
-        this.router.navigate(['dashboard']);
+        this.zone.run(() => this.router.navigate(['dashboard']));
       }
     );
   }

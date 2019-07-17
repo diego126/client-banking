@@ -2,17 +2,16 @@
 <app-get-paginated-customer [parentData]="customer"></app-get-paginated-customer>
 <br>
 <div class="card">
-  <div class="card-header">Create Customer</div>
-  <div class="card-body">
-    <form (ngSubmit)="create()" [formGroup]="customerForm">
-      <label for="firstName">First name</label>
-      <input type="text" id="firstName" class="form-control" formControlName="firstName">
-      <label for="lastName">Last name</label>
-      <input type="text" id="lastName" class="form-control" formControlName="lastName">
-      <br>
-      <button type="submit" class="btn btn-primary">Create</button>
-    </form>
-  </div>
+    <div class="card-header">Create Customer</div>
+    <div class="card-body">
+        <form ngNativeValidate (ngSubmit)="create()" [formGroup]="customerForm">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*" autofocus required title="Solo ingrese letras" class="form-control" formControlName="firstName">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]*" autofocus required title="Solo ingrese letras" class="form-control" formControlName="lastName">
+            <br>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
 </div>
 <br>
-
